@@ -1,0 +1,38 @@
+<br>
+ 
+    <div class="container table-responsive align-middle">
+        <br/>
+<table class="table table-striped table-bordered table-responsive" *ngIf='response.length > 0'>
+    <thead>
+      <tr>        
+        <th scope="col">AmazonOrderId</th>
+        <th scope="col">BuyerInfo</th> 
+        <th scope="col">ItemsShipped</th>
+        <th scope="col">OrderType</th>
+        <th scope="col">PrimeOrder</th>
+        <th scope="col">OrderStatus</th>
+        <th scope="col">OrderTotal</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor = 'let item of response;let i = index '>
+      <tr>
+        
+        <td>{{item.AmazonOrderId}}</td>
+        <td>{{item.BuyerInfo.BuyerEmail}}</td>
+        <td>{{item.NumberOfItemsShipped}}</td>
+        <td>{{item.OrderType}}</td>
+        <td>{{item.IsPremiumOrder}}</td>
+        <td>{{item.OrderType}}</td>
+        <td>{{item.OrderTotal.Amount}}</td>
+        <td>
+            <i class="fa fa-eye"  (click)="viewOrderDetail(item.AmazonOrderId)" aria-hidden="true"></i>
+            
+            
+          </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
