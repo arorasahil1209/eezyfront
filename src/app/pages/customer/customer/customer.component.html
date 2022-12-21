@@ -6,8 +6,10 @@
     Add New Customer    
   </button>
 
- 
-
+  
+  <button (click)="authorize('sahil')" type="button" class="btn btn-primary" >
+    Authorize New Customer    
+  </button>
 </div>   
     <div class="container">
         <br/>
@@ -16,20 +18,21 @@
       <tr>        
         <th scope="col">CustomerId</th>
         <th scope="col">CustomerName</th>
-        <th scope="col">Authorize</th>
+        <th scope="col">View Orders</th>
         <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody *ngFor = 'let item of response;let i = index '>
       <tr>
-        
         <td>{{item.customerId}}</td>
         <td>{{item.customerName}}</td>
-        <th (click)="authorize(item.customerId)">Authorize</th>
+        <td>
+          <i class="fa fa-eye" aria-hidden="true"
+          (click)="viewOrder(item.customerId)"
+          ></i>
+        </td>
         <td>
           <i class="fa fa-trash" (click)="deleteCustomer(item.customerId)" aria-hidden="true"></i>
-          <i style='font-size:24px' style="margin-left:10px" class='fas'>&#xf044;</i>
-          
         </td>
 
 

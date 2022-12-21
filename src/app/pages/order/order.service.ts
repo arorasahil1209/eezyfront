@@ -10,12 +10,26 @@ export class OrderService {
 
   constructor(private http:HttpClient) { }
   
-  getOrderList(){
-    return this.http.get(configUrls.orderListURL)
+  getOrderList(data:any){
+    return this.http.get(configUrls.orderListURL+`?customerId=${data}`)
     .pipe(
       catchError(this.handleError)
     )
   } 
+
+  getOrderDetail(data:any){
+    return this.http.get(configUrls.orderDetailURL+`?customerId=${data.customerId}&orderId=${data.orderId}`)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  saveCustomerDetails(body:any){
+    return this.http.post(configUrls.addCustomerURL,body)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
   handleError(error:any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

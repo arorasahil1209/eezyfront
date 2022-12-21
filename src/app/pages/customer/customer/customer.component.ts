@@ -60,4 +60,9 @@ export class CustomerComponent implements OnInit {
     console.log('id:::',id);
     window.open("https://sellercentral.amazon.in/apps/authorize/consent?application_id=amzn1.sp.solution.924d8fd7-be2f-4bd0-bf05-5d90f40a9c53&state=stateexample&version=beta");
   }
+
+  viewOrder(event:any){
+    this.router.navigate(['/order/lists'],{ queryParams: { customer: event } })
+    console.log('event')
+  }
 }

@@ -1,5 +1,5 @@
-//const fixedURI='http://13.232.29.73:3012'
-const fixedURI='http://localhost:3012'
+const fixedURI='http://3.109.141.238:4000'
+//const fixedURI='http://localhost:4000'
 export const configUrls={
     loginURL: fixedURI + '/login',
     signupURL:fixedURI + '/register',
@@ -7,4 +7,5 @@ export const configUrls={
     customerListURL:fixedURI + '/customer-list',
     removeCustomerURL:fixedURI + '/remove-customer',
     orderListURL:fixedURI + '/order-list',
+    orderDetailURL:fixedURI + '/order-detail'
 }
